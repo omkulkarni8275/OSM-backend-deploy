@@ -1,0 +1,4 @@
+.env 
+node_modules 
+train.py 
+train_and_save_model.py
