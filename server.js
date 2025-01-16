@@ -34,6 +34,12 @@ app.use('/api/stories', storiesRoute);
 app.use("/api", contactRoute);
 app.use('/api/therapy', therapiesRoute);
 
+app.use('/cj', (req, res) => {
+  console.log(`[${new Date().toISOString()}] Cron job triggered`);
+  // Add your cron job logic here
+  res.status(200).send('Cron job executed successfully');
+});
+
 // Catch-all route for debugging
 app.use('*', (req, res) => {
   console.log(`[${new Date().toISOString()}] 404 - Route not found: ${req.method} ${req.url}`);
